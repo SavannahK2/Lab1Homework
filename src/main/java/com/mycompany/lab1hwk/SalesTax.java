@@ -30,15 +30,6 @@ public class SalesTax {
       purchase = keyboard.nextDouble();
       String purchaseNumberAsString = keyboard.nextLine();
     
-      // Catch user error: STILL INCORRECT
-      try {
-          float purchaseNumberAsFloat = Float.parseFloat(purchaseNumberAsString);
-          System.out.print("Thank you.");
-      } catch (NumberFormatException x) {
-          System.out.print("Type only numbers and a decimal for cents (only two decimal places for cents allowed)");
-      }
-     
-      
       // Calculations
       DecimalFormat df= new DecimalFormat("#.##");
       df.setRoundingMode(RoundingMode.CEILING);
@@ -48,7 +39,7 @@ public class SalesTax {
       totalCost = purchase + totalTax;
       
       // Display the results.
-      System.out.println("Purchase amount: $" + purchase);
+      System.out.println("Purchase amount: $" + df.format(purchase));
       System.out.println("State tax: $" + df.format(stateTax));
       System.out.println("County tax: $" + df.format(countyTax));
       System.out.println("Total tax: $" + df.format(totalTax));
