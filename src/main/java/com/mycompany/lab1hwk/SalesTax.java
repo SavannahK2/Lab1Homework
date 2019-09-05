@@ -5,7 +5,10 @@
  */
 package com.mycompany.lab1hwk;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.Scanner;
+
 public class SalesTax {
     public static void main(String[] args) {
         // Constants
@@ -37,6 +40,8 @@ public class SalesTax {
      
       
       // Calculations
+      DecimalFormat df= new DecimalFormat("#.##");
+      df.setRoundingMode(RoundingMode.CEILING);
       stateTax = purchase * StateTaxRate;
       countyTax = purchase * CountyTaxRate;
       totalTax = stateTax + countyTax;
@@ -44,9 +49,9 @@ public class SalesTax {
       
       // Display the results.
       System.out.println("Purchase amount: $" + purchase);
-      System.out.println("State tax: $" + stateTax);
-      System.out.println("County tax: $" + countyTax);
-      System.out.println("Total tax: $" + totalTax);
-      System.out.println("Total cost: $" + totalCost);
+      System.out.println("State tax: $" + df.format(stateTax));
+      System.out.println("County tax: $" + df.format(countyTax));
+      System.out.println("Total tax: $" + df.format(totalTax));
+      System.out.println("Total cost: $" + df.format(totalCost));
     }
 }
