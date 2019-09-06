@@ -22,7 +22,7 @@ public class SalesTax {
       double totalTax;         // Total sales tax
       double totalCost;        // Total cost of the purchase
       
-      // Create a Scanner object for keyboard input.
+      // Createkeyboard input.
       Scanner keyboard = new Scanner(System.in);
              
       // Get the amount of the purchase.
